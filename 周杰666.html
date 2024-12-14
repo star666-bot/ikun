@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100%;
+            height: 100%;
+        }
+        .sheng{
+            width: 800px;
+            height: 100%;
+            margin: 0 auto;
+            background: url(sds.jpg) center no-repeat;
+            background-size: 100%;
+            border: 10px solid;
+            border-image: radial-gradient(yellow,#ff00ad,#0adfee) 1;
+        }
+        .title{
+            width: 300px;
+            color: red;
+            font-size: 60px;
+            text-align: center;
+            position: relative;
+            top: 0;
+            left: 30%;
+        }
+        .audio{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="sheng">
+            <audio src="圣诞节歌曲.mp3" loop="loop" controls="controls" class="audio"></audio>
+            <h1 class="title">圣诞节快乐</h1>
+        </div>
+    </div>
+</body>
+<script>
+    var title = document.getElementsByClassName('title')[0]
+    var box = document.getElementsByClassName('box')[0]
+    var audio = document.getElementsByClassName('audio')[0]
+    box.onclick=()=>{
+        audio.play()
+    }
+    setInterval(() => {
+        var Number =
+          "#" +
+          // 下舍入（0-1随机数 乘以 255）转换为16进制
+          Math.floor(Math.random() * 255).toString(16) +
+          Math.floor(Math.random() * 255).toString(16) +
+          Math.floor(Math.random() * 255).toString(16);
+        title.style.color = Number
+        var i=Math.round(Math.random()*500)
+        var j=Math.round(Math.random()*840)
+        title.style.top=j+'px'
+        title.style.left=i+'px'	
+    }, 1000)
+</script>
+</html>
